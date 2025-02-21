@@ -1,0 +1,207 @@
+syntax = "proto3";
+
+option go_package = "pkg/protobuf";
+
+enum TopicId {
+    // Dart
+    T_Report = 0;
+    T_Footnote = 1;
+    T_Bond = 2;
+    T_CommercialPaperSecuritiesUnpaid = 3;
+    T_CorporateBondUnpaid = 4;
+    T_ShortTermBondUnpaid = 5;
+    // Kind
+    T_Disclosure = 6;
+    // KRX
+    T_Indices = 7;
+    T_IndexComposition = 8;
+    T_IndexPrice = 9;
+    T_Price = 10;
+}
+
+message Report {
+    string rceptNo = 1;
+    string reprtCode = 2;
+    string bsnsYear = 3;
+    string corpCode = 4;
+    string sjDiv = 5;
+    string sjNm = 6;
+    string accountId = 7;
+    string accountNm = 8;
+    string accountDetail = 9;
+    string thstrmNm = 10;
+    string thstrmAmount = 11;
+    string stockName = 12;
+    string stockCode = 13;
+    string fsDiv = 14;
+}
+
+message Footnote {
+    string rcpNo = 1;
+    string corpCode = 2;
+    string stockCode = 3;
+    string bsnsYear = 4;
+    string reprtCode = 5;
+    string remark1 = 6;
+    string remark2 = 7;
+    string remark3 = 8;
+    string remark4 = 9;
+}
+
+message Bond {
+    string rceptNo = 1;
+    string corpCls = 2;
+    string corpCode = 3;
+    string corpName = 4;
+    string isuCmpny = 5;
+    string scritsKndNm = 6;
+    string isuMthNm = 7;
+    string isuDe = 8;
+    string facvaluTotamt = 9;
+    string intrt = 10;
+    string evlGradInstt = 11;
+    string mtd = 12;
+    string repyAt = 13;
+    string mngtCmpny = 14;
+    string stockCode = 15;
+    string bsnsYear = 16;
+    string reprtCode = 17;
+}
+
+message CommercialPaperSecuritiesUnpaid {
+    string rceptNo = 1;
+    string corpCls = 2;
+    string corpCode = 3;
+    string corpName = 4;
+    string sm = 5;
+    string remndrExprtn1 = 6;
+    string remndrExprtn2 = 7;
+    string de10Below = 8;
+    string de10ExcessDe30Below = 9;
+    string de30ExcessDe90Below = 10;
+    string de90ExcessDe180Below = 11;
+    string de180ExcessYy1Below = 12;
+    string yy1ExcessYy2Below = 13;
+    string yy2ExcessYy3Below = 14;
+    string yy3Excess = 15;
+    string stockCode = 16;
+    string bsnsYear = 17;
+}
+
+message CorporateBondUnpaid {
+    string rceptNo = 1;
+    string corpCls = 2;
+    string corpCode = 3;
+    string corpName = 4;
+    string sm = 5;
+    string remndrExprtn1 = 6;
+    string remndrExprtn2 = 7;
+    string yy1ExcessYy2Below = 8;
+    string yy2ExcessYy3Below = 9;
+    string yy1Below = 10;
+    string yy3ExcessYy4Below = 11;
+    string yy4ExcessYy5Below = 12;
+    string yy5ExcessYy10Below = 13;
+    string yy10Excess = 14;
+    string stockCode = 15;
+    string bsnsYear = 16;
+}
+
+message ShortTermBondUnpaid {
+    string rceptNo = 1;
+    string corpCls = 2;
+    string corpCode = 3;
+    string corpName = 4;
+    string sm = 5;
+    string remndrExprtn1 = 6;
+    string remndrExprtn2 = 7;
+    string de10Below = 8;
+    string de10ExcessDe30Below = 9;
+    string de30ExcessDe90Below = 10;
+    string de90ExcessDe180Below = 11;
+    string de180ExcessYy1Below = 12;
+    string isuLmt = 13;
+    string remndrLmt = 14;
+    string stockCode = 15;
+    string bsnsYear = 16;
+}
+
+message Disclosure {
+    string disclosureTime = 1;
+    string stockNm = 2;
+    string reason = 3;
+    string rcptNo = 4;
+    string stockCode = 5;
+    string docNo = 6;
+    string detailUrl = 7;
+    string detail = 8;
+    string disclosureData = 9;
+}
+
+message Indices {
+    string isuCd = 1;
+    string isuAbbr = 2;
+    int32 prsntprc = 3;
+    int32 cmpprevddFlucTp1 = 4;
+    int32 cmpprevddPrc = 5;
+    int32 flucRt = 6;
+    int32 askord = 7;
+    int32 bidord = 8;
+    int32 trdvol = 9;
+    int64 trdval = 10;
+    int32 opnprc = 11;
+    int32 hgprc = 12;
+    int32 lwprc = 13;
+    int32 parval = 14;
+    int32 listshrCnt = 15;
+    int32 listMktcap = 16;
+    int32 indices = 17;
+    string updateDate = 18;
+}
+
+message IndexComposition {
+    string isuSrtCd = 1;
+    string isuAbbrv = 2;
+    int32 tddClsPrc = 3;
+    int32 flucTpCd = 4;
+    int32 strCmpPrc = 5;
+    int32 flucRt = 6;
+    int64 mktCap = 7;
+    string updateDate = 8;
+    int32 rank = 9;
+    string index = 10;
+}
+
+message IndexPrice {
+    string idxNm = 1;
+    double clsprcIdx = 2;
+    int32 flucTpCd = 3;
+    double cmpprevddIdx = 4;
+    double flucRt = 5;
+    double opnprcIdx = 6;
+    double hgprcIdx = 7;
+    double lwprcIdx = 8;
+    int32 accTrdvol = 9;
+    int64 accTrdval = 10;
+    int64 mktcap = 11;
+    string updateDate = 12;
+    string market = 13;
+}
+
+message Price {
+    string stockCode = 1;
+    string stockFullName = 2;
+    string classify = 3;
+    string stockClassify = 4;
+    int32 closingPrice = 5;
+    int32 prepare = 6;
+    int32 fluctuationRate = 7;
+    int32 openPrice = 8;
+    int32 highPrice = 9;
+    int32 lowPrice = 10;
+    int32 tradingVolume = 11;
+    int32 transactionAmount = 12;
+    int64 marketCap = 13;
+    int32 numberOfListedShares = 14;
+    string updateDate = 15;
+}

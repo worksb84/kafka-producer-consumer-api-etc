@@ -1,0 +1,8 @@
+go 1.21.4
+
+use ./cmd/consumer
+use ./cmd/crawler
+use ./cmd/producer
+use ./pkg/protobuf
+use ./pkg/aws
+use ./pkg/bot
