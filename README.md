@@ -61,7 +61,7 @@ docker exec -it kafka /bin/bash
 # https://docs.aws.amazon.com/ko_kr/msk/latest/developerguide/public-access.html
 # https://docs.aws.amazon.com/ko_kr/msk/latest/developerguide/msk-acls.html
 ```shell
-./kafka-acls.sh --authorizer-properties zookeeper.connect=z-3.x.c3.kafka.ap-northeast-2.amazonaws.com:2181,z-1.x.c3.kafka.ap-northeast-2.amazonaws.com:2181,z-2.x.c3.kafka.ap-northeast-2.amazonaws.com:2181 --add --allow-principal "User:dofiang" --operation All --group=* --topic=*
+./kafka-acls.sh --authorizer-properties zookeeper.connect=z-3.x.c3.kafka.ap-northeast-2.amazonaws.com:2181,z-1.x.c3.kafka.ap-northeast-2.amazonaws.com:2181,z-2.x.c3.kafka.ap-northeast-2.amazonaws.com:2181 --add --allow-principal "User:**********" --operation All --group=* --topic=*
 
 ```
 # AWS SASL/SCRAM config
@@ -69,7 +69,7 @@ docker exec -it kafka /bin/bash
 # client.properties
 security.protocol=SASL_SSL
 sasl.mechanism=SCRAM-SHA-512
-sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="dofiang" password="dofiang1003!";
+sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required username="**********" password="**********";
 ```
 
 
