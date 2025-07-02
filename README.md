@@ -75,7 +75,7 @@ sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule require
 
 # AWS Create EKS
 ```shell
-eksctl create cluster --name [name] --region ap-northeast-2 --vpc-public-subnets subnet-06406c23e0600ebb4,subnet-02013dddabbfcbcee,subnet-05351774f3749d6fc --version 1.28 --nodegroup-name app --node-type t3.small --nodes 1 --nodes-min 1 --nodes-max 5
+eksctl create cluster --name [name] --region ap-northeast-2 --vpc-public-subnets subnet-**********,subnet-**********,subnet-********** --version 1.28 --nodegroup-name app --node-type t3.small --nodes 1 --nodes-min 1 --nodes-max 5
 ```
 
 # AWS EKS Command
